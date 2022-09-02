@@ -1,0 +1,52 @@
+<svg id="BLUE" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1281" height="772" viewBox="0 0 1281 772">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1b78c6;
+        fill-opacity: 0.82;
+        opacity: 0.77;
+        filter: url(#filter);
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #055ca4;
+        opacity: 0.45;
+        filter: url(#filter-2);
+      }
+
+      .cls-3 {
+        fill: #003d6f;
+        fill-opacity: 0.46;
+        filter: url(#filter-3);
+      }
+    </style>
+    <filter id="filter" x="-999" y="-1507" width="2280" height="2279" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="6.325"/>
+      <feFlood result="flood" flood-opacity="0.57"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-2" x="-782" y="-1275" width="1849" height="1848" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="5.745"/>
+      <feFlood result="flood"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-3" x="-950" y="-1476" width="1898" height="1898" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="3.873"/>
+      <feFlood result="flood" flood-opacity="0.18"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="Ellipse_1_copy" data-name="Ellipse 1 copy" class="cls-1" d="M-177.226-1420.63C404.068-1596.12,1017.56-1267.15,1193.05-685.856S1039.57,508.933,458.279,684.423-736.51,530.943-912-50.351-758.52-1245.14-177.226-1420.63Z"/>
+  <path class="cls-2" d="M-115.566-1204.57c471.053-142.21,968.2,124.37,1110.405,595.413S870.462,359.03,399.408,501.239-568.791,376.872-711-94.173-586.62-1062.36-115.566-1204.57Z"/>
+  <circle id="Ellipse_1_copy_2" data-name="Ellipse 1 copy 2" class="cls-3" cx="-1.75" cy="-527.42" r="932.188"/>
+</svg>

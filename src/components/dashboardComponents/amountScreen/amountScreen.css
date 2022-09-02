@@ -1,0 +1,57 @@
+.amount-screen {
+  color: white;
+}
+
+.amount-screen form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#group-db-text {
+  width: calc(100% - 20px);
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  margin: 10px 0;
+}
+
+#group-db-text::placeholder {
+  color: black;
+}
+
+#group-db-text:focus {
+  border: 3px solid #d61c4e;
+  outline: none;
+}
+
+.radio-group {
+  min-height: 200px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-group::-webkit-scrollbar {
+  display: none;
+}
+
+.radio-group p {
+  text-align: center;
+  margin: 10px 0;
+  padding: 12px;
+}
+
+.group-one-radio {
+  margin: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.special-group-btn {
+  outline: none;
+}

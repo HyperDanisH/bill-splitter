@@ -1,0 +1,53 @@
+.buttons {
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  /* border-top-left-radius: 10px;
+
+  border-bottom-left-radius: 10px; */
+  border-radius: 10px;
+  border-color: #eae509;
+  border-width: 2px;
+  outline: none;
+  color: white;
+  background-color: #e94560;
+}
+
+.people-who-joined-group-screen {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-self: center; */
+}
+
+.people-who-joined-group-screen p {
+  text-align: center;
+  margin: 16px;
+  text-decoration: underline;
+  color: #eae509;
+}
+
+.white {
+  color: white !important;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin: 20px 0;
+}
+
+.scroll {
+  overflow-y: scroll;
+  height: calc(100% - 60px);
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  width: 100%;
+  height: 1005;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}

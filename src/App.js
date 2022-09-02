@@ -1,23 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState, useContext } from "react";
+import { Routes, Route } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
+import {
+  BasePage,
+  Dashboard,
+  Group,
+  Login,
+  SignIn,
+  PersonalScreen,
+} from "./components";
+import { auth } from "./firebase/firebase";
+import AmountScreen from "./components/dashboardComponents/amountScreen/AmountScreen";
+import DashboardContext from "./context/DashboardContext";
 
 function App() {
+  const user = auth.currentUser;
+  const [data, setData] = useState({});
+  const [isDataLoaded, setDataIsLoaded] = useState(false);
+  const [totalNamesInList, setTotalNamesInList] = useState([]);
+  const { fecthGroupDoc, groupDocData, toSetRoutesIfDatIsProvided } =
+    useContext(DashboardContext);
+
+  useEffect(() => {
+    return () => {
+      setTimeout(() => {
+        fecthGroupDoc();
+        if (groupDocData.exists()) {
+          setData(groupDocData);
+          setTotalNamesInList([
+            ...totalNamesInList,
+            groupDocData.data().totalNamesInList,
+          ]);
+          setDataIsLoaded(true);
+          console.log("success here");
+        }
+      }, 3000);
+    };
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<BasePage />} />
+        <Route path="/log-in" element={<Login />} />
+        <Route path="/sign-up" element={<SignIn />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="add-amount" element={<AmountScreen />} />
+          {groupDocData.totalNamesInList != undefined &&
+          toSetRoutesIfDatIsProvided
+            ? groupDocData.totalNamesInList.map((item) => {
+                console.log(item);
+                return (
+                  <>
+                    <Route
+                      path={item.email}
+                      element={<PersonalScreen pathRefProp={item.email} />}
+                      key={item.name}
+                    />
+                  </>
+                );
+              })
+            : null}
+        </Route>
+        <Route path="/joined-group" element={<Group />} />
+      </Routes>
     </div>
   );
 }

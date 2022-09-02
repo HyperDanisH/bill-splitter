@@ -1,0 +1,75 @@
+.group-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.group-container p {
+  font-size: 1rem;
+  color: white;
+  margin: 20px;
+}
+
+.add-member {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.add-member button {
+  background-color: transparent;
+  border: none;
+}
+
+.add-member svg {
+  width: 86px;
+  font-size: 68px;
+  color: white;
+  background: none;
+}
+
+.group-add-form-field {
+  width: 350px;
+  height: 50px;
+  padding: 14px;
+  /* border-radius: 8px; */
+  border: none;
+  margin: 15px;
+}
+
+.group-add-form-field:focus {
+  border: 5px solid #fedb39;
+  outline: none;
+}
+
+.group-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.names-container-group-pannel {
+  width: 40vw;
+  height: 200px;
+  overflow-y: scroll;
+  /* background-color: red; */
+}
+
+.submit-btn-group {
+  width: auto;
+  height: 50px;
+  /* border-radius: 5px solid; */
+  outline: none;
+  border-radius: 8px;
+  padding: 12px;
+  border: none;
+  background-color: #59ce8f;
+}
+
+.inside-names-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,58 @@
+.base-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.base-container h1 {
+  font-weight: 700;
+  font-size: 2.6rem;
+  margin: 2rem;
+  color: white;
+}
+
+.btns {
+  display: flex;
+}
+
+.btn {
+  margin: 20px;
+}
+
+.signIn {
+  width: 105px;
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  background-color: #eb1d36;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.login {
+  width: 105px;
+  height: 50px;
+  border: 2px solid #eb1d36;
+  border-radius: 15px;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  text-decoration: none;
+  color: white;
+  margin: 15px;
+}
+
+.base-container p.creator {
+  margin: 50px;
+  font-size: 1.2rem;
+  color: white;
+}
