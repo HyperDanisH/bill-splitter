@@ -13,16 +13,27 @@ import {
 import { auth } from "./firebase/firebase";
 import AmountScreen from "./components/dashboardComponents/amountScreen/AmountScreen";
 import DashboardContext from "./context/DashboardContext";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const user = auth.currentUser;
+  const navigate = useNavigate();
   const [data, setData] = useState({});
   const [isDataLoaded, setDataIsLoaded] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [totalNamesInList, setTotalNamesInList] = useState([]);
   const { fecthGroupDoc, groupDocData, toSetRoutesIfDatIsProvided } =
     useContext(DashboardContext);
 
   useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsUserLoggedIn(true);
+      } else {
+        setIsUserLoggedIn(false);
+      }
+    });
+
     return () => {
       setTimeout(() => {
         fecthGroupDoc();
@@ -37,14 +48,15 @@ function App() {
         }
       }, 3000);
     };
-  }, []);
+  }, [auth]);
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<BasePage />} />
+        {/* <Route path="/" element={<BasePage />} /> */}
         <Route path="/log-in" element={<Login />} />
-        <Route path="/sign-up" element={<SignIn />} />
+        <Route path="/" element={isUserLoggedIn ? <Dashboard /> : <SignIn />} />
+
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="add-amount" element={<AmountScreen />} />
           {groupDocData.totalNamesInList != undefined &&
@@ -63,6 +75,7 @@ function App() {
               })
             : null}
         </Route>
+
         <Route path="/joined-group" element={<Group />} />
       </Routes>
     </div>

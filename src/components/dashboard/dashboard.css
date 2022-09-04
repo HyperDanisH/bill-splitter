@@ -15,7 +15,7 @@
   width: 290px;
   /* height: 68px; */
   font-size: 1.8rem;
-  color: white;
+  color: rgb(0, 0, 0);
   justify-self: start;
   display: flex;
   justify-content: center;
@@ -27,9 +27,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: rgb(0, 0, 0);
   flex-direction: column;
-  background-color: #293462;
+  background-color: #ffffff;
 }
 
 .user-details {
@@ -76,6 +76,7 @@
   /* border-radius: 8px; */
   border: none;
   margin: 15px 0;
+  border: 2px solid #fedb39;
 }
 
 #text:focus {
@@ -98,6 +99,7 @@
   border: 2px solid #d61c4e;
   background-color: transparent;
   margin: 30px;
+  color: black;
   /* background-color: #fedb39; */
 }
 
@@ -128,4 +130,12 @@
 .main-dashboard {
   display: flex;
   justify-content: flex-start;
+  height: auto;
+}
+
+@media (max-width: 576px) {
+  .main-dashboard {
+    height: 70vh;
+    flex-direction: column;
+  }
 }

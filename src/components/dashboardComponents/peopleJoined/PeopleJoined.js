@@ -54,7 +54,7 @@ const PeopleJoined = () => {
 
   return (
     <div className="people-who-joined-group-screen">
-      <Link className="buttons" to="add-amount">
+      <Link className="buttons" to="/dashboard/add-amount">
         Add amount
       </Link>
       <p>MEMBERS LIST</p>
@@ -64,7 +64,7 @@ const PeopleJoined = () => {
               return (
                 <>
                   <Link
-                    to={item.email}
+                    to={`/dashboard/${item.email}`}
                     className="white"
                     key={index.toString()}
                   >

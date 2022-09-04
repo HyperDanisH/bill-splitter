@@ -21,7 +21,7 @@ const PersonalScreen = ({ pathRefProp }) => {
               setLocalStorageRef(
                 JSON.parse(localStorage.getItem(element.name))
               );
-              console.log(localStorageRef);
+              // console.log(localStorageRef);
               //   clearInterval();
               //   return;
             }
@@ -39,7 +39,7 @@ const PersonalScreen = ({ pathRefProp }) => {
   return (
     <div className="amount-screen personal-screen">
       <div className="bill-list">
-        {localStorageRef !== {} && localStorageRef.productNames !== undefined
+        {localStorageRef.productNames !== undefined
           ? localStorageRef.productPrices.map((item, index) => {
               return (
                 <>

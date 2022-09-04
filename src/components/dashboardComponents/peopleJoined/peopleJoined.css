@@ -9,7 +9,7 @@
   border-color: #eae509;
   border-width: 2px;
   outline: none;
-  color: white;
+  color: rgb(0, 0, 0);
   background-color: #e94560;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .white {
-  color: white !important;
+  color: rgb(0, 0, 0) !important;
   font-size: 1.2rem;
   text-decoration: none;
   margin: 20px 0;
@@ -50,4 +50,8 @@ a {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+}
+
+.sldjf {
+  color: black !important;
 }

@@ -234,7 +234,7 @@ const AmountScreen = () => {
             })}
         </div>
         <button type="submit" className="dashboard-signup special-group-btn">
-          Submit
+          Submit (click twice)
         </button>
       </form>
     </div>
