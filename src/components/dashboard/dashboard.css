@@ -30,6 +30,13 @@
   color: rgb(0, 0, 0);
   flex-direction: column;
   background-color: #ffffff;
+  position: relative;
+}
+
+.total-amount-to-be-payed-container {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
 }
 
 .user-details {

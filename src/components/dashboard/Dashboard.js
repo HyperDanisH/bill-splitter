@@ -15,6 +15,8 @@ const Dashboard = () => {
   const [adminName, setAdminName] = useState("");
   const [keyIsFoundInDataBase, setKeyIsFoundInDataBase] = useState(false);
   const [data, setData] = useState({});
+  const [localStorageRef, setLocalStorageRef] = useState([]);
+  const [totalAmountYetToBePayed, setTotalAmountYetToBePayed] = useState(0);
   const groupRef = collection(db, "groups");
   const { fecthGroupDoc, groupDocData, setDataIsLoaded } =
     useContext(DashboardContext);
@@ -73,18 +75,29 @@ const Dashboard = () => {
   // window.addEventListener("DOMContentLoaded", () => {
   //   func();
   // });
+  // setInterval(() => {
+  // }, 1000);
+  // document.addEventListener("DOMContentLoaded", (e) => {
+  // return () => {
+  //   func();
+  // };
+  // });
   useEffect(() => {
+    setTotalAmountYetToBePayed(0);
+    const keys = Object.keys(localStorage);
+    keys.forEach((key) => {
+      localStorageRef.push(JSON.parse(localStorage.getItem(key)));
+    });
+    localStorageRef.forEach((item) => {
+      item.productPrices.forEach((amount) => {
+        setTotalAmountYetToBePayed(totalAmountYetToBePayed + amount);
+      });
+    });
+
     setTimeout(() => {
       fecthGroupDoc();
       func();
     }, 1000);
-    // setInterval(() => {
-    // }, 1000);
-    // document.addEventListener("DOMContentLoaded", (e) => {
-    // return () => {
-    //   func();
-    // };
-    // });
     return () => {
       console.log("The use effect is fired");
       console.log(keyIsFoundInDataBase);
@@ -122,6 +135,9 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
+      <div className="total-amount-to-be-payed-container">
+        <p>Total amount to be payed is: {totalAmountYetToBePayed}</p>
+      </div>
       <Header />
       {keyIsFoundInDataBase ? (
         <>

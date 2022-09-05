@@ -99,6 +99,7 @@ const Group = () => {
                             productNames: [],
                             productPrices: [],
                             paidProducts: [],
+                            paidAmount: [],
                             personName: element.name,
                           })
                         );

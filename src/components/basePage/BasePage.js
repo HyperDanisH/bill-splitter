@@ -30,6 +30,10 @@ const BasePage = () => {
         <h1>
           Split the <span> bills you pay equaly </span>
         </h1>
+        <p>
+          Created by Danish arora for you and your friends. I am a front-end
+          self learning programmer please don't forget to upvote me!
+        </p>
         <div className="btns">
           <Link className="signIn" to="/sign-up">
             <p className="signUp">Sign Up</p>

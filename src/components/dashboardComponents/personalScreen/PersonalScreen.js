@@ -47,7 +47,7 @@ const PersonalScreen = ({ pathRefProp }) => {
         <h1>
           Mark
           <img src={UnVerified} alt="" />
-          when user pays you back
+          when user pays you back (click twice)
         </h1>
       </div>
       <div className="bill-list">
@@ -63,6 +63,9 @@ const PersonalScreen = ({ pathRefProp }) => {
                     localStorageRefToBePassed.paidProducts.push(
                       localStorageRef.productNames[index]
                     );
+                    localStorageRefToBePassed.paidAmount.push(item);
+                    localStorageRefToBePassed.productNames.splice(index, 1);
+                    localStorageRefToBePassed.productPrices.splice(index, 1);
                     console.log(localStorageRefToBePassed);
                     localStorageRef.personName !== undefined &&
                       localStorage.setItem(
