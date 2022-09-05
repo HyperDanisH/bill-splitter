@@ -116,7 +116,8 @@
 }
 
 .amount-screen {
-  width: 225px;
+  /* width: 225px; */
+  width: 400px;
   min-height: 70vh;
   /* background-color: black; */
   border-left: 2px solid #277bc0;

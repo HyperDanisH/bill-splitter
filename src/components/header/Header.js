@@ -21,20 +21,33 @@ const Header = () => {
         <button
           className="create-group dashboard-signup"
           onClick={() => {
-            signOut(auth)
-              .then(async () => {
-                for (let key in localStorage) {
-                  dataFromLocalStorage.data.push(
-                    JSON.parse(localStorage.getItem(key))
-                  );
-                }
+            const func = async () => {
+              const keys = Object.keys(localStorage);
+              keys.forEach((key) => {
+                dataFromLocalStorage.data.push(
+                  JSON.parse(localStorage.getItem(key))
+                );
+              });
+              const setDocRef = async () => {
                 const docRef = doc(db, "userProducts", user && user.uid);
-                const setDocRef = await setDoc(docRef, dataFromLocalStorage);
-              })
-              .then(() => {
+                const setDocRef = await setDoc(
+                  docRef,
+                  dataFromLocalStorage
+                ).then(() => {
+                  console.log("data uploaed");
+                });
+              };
+              signOut(auth).then(() => {
                 localStorage.clear();
                 navigate("/");
               });
+
+              // for (let key in localStorage) {
+
+              // }
+              // console.log(dataFromLocalStorage);
+            };
+            func();
           }}
         >
           Sign out

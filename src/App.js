@@ -55,7 +55,12 @@ function App() {
       <Routes>
         {/* <Route path="/" element={<BasePage />} /> */}
         <Route path="/log-in" element={<Login />} />
-        <Route path="/" element={isUserLoggedIn ? <Dashboard /> : <SignIn />} />
+        <Route path="/sign-up" element={<SignIn />} />
+
+        <Route
+          path="/"
+          element={isUserLoggedIn ? <Dashboard /> : <BasePage />}
+        />
 
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="add-amount" element={<AmountScreen />} />

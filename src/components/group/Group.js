@@ -96,8 +96,9 @@ const Group = () => {
                         localStorage.setItem(
                           element.name,
                           JSON.stringify({
-                            productNames: [null],
-                            productPrices: [null],
+                            productNames: [],
+                            productPrices: [],
+                            paidProducts: [],
                             personName: element.name,
                           })
                         );

@@ -33,6 +33,9 @@ const AmountScreen = () => {
             ...elementToBeSaved.productPrices,
             price / arrForStoringNamesToBePushed.length,
           ],
+          paidProducts: elementToBeSaved.paidProducts
+            ? [...elementToBeSaved.paidProducts]
+            : [],
           personName: element,
         })
       );

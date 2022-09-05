@@ -66,3 +66,9 @@ input.login-signin {
   width: 25px;
   text-align: center;
 }
+
+.bg-signin {
+  position: absolute;
+  top: 0;
+  z-index: -100000;
+}
